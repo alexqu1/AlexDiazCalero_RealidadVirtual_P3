@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estación espacial - Imagen 360°</title>
+
+    <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
+</head>
+
+<body>
+    <a-scene>
+        <!-- Recursos de la escena -->
+        <a-assets>
+            <img id="panoramaEspacial" src="img/img360.png">
+            <img id="texturaCubo" src="img/TexturaCubo.png">
+        </a-assets>
+
+        <!-- Imagen panorámica de 360 grados -->
+        <a-sky
+            id="sky-estacion"
+            src="#panoramaEspacial"
+            radius="10"
+            rotation="0 -90 0">
+        </a-sky>
+
+        <!-- Cubo con textura futurista -->
+        <a-box
+            position="0 0 -3"
+            rotation="0 45 0"
+            width="1"
+            height="1"
+            depth="1"
+            src="#texturaCubo">
+        </a-box>
+
+        <!-- Título de la experiencia -->
+        <a-text
+            value="ESTACION ESPACIAL"
+            position="0 2 -4"
+            align="center"
+            color="#FFFFFF"
+            width="6">
+        </a-text>
+
+        <!-- Cámara y cursor -->
+        <a-camera position="0 0 0">
+            <a-cursor color="#00FFFF"></a-cursor>
+        </a-camera>
+
+    </a-scene>
+</body>
+</html>
+```

@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estación espacial - Vídeo 360°</title>
+
+    <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
+</head>
+
+<body>
+    <a-scene>
+        <!-- Recursos de la escena -->
+        <a-assets>
+            <video
+                id="videoEspacial"
+                src="video/video360.mp4"
+                autoplay
+                loop
+                muted
+                playsinline>
+            </video>
+
+            <img id="texturaCubo" src="img/TexturaCubo.png">
+        </a-assets>
+
+        <!-- Vídeo panorámico de 360 grados -->
+<a-videosphere
+    id="videosphere-estacion"
+    src="#videoEspacial"
+    rotation="0 -90 0"
+    radius="500"
+>
+</a-videosphere>
+
+        <!-- Cubo con textura futurista -->
+    <a-box
+    position="0 0 -3"
+    width="1"
+    height="1"
+    depth="1"
+    src="#texturaCubo"
+    animation="property: rotation; to: 0 405 0; loop: true; dur: 8000; easing: linear">
+</a-box>
+
+        <!-- Título de la experiencia -->
+        <a-text
+            value="ESTACION ESPACIAL"
+            position="0 2 -4"
+            align="center"
+            color="#FFFFFF"
+            width="6">
+        </a-text>
+
+        <!-- Cámara y cursor -->
+        <a-camera position="0 0 0">
+            <a-cursor color="#00FFFF"></a-cursor>
+        </a-camera>
+
+    </a-scene>
+</body>
+</html>
